@@ -26,4 +26,4 @@ runs:
 
     - name: Docker Push
       shell: bash
-      run: docker push ${{ inputs.username }}${{ inputs.image_name }}
+      run: docker push ${{ inputs.username }}/${{ inputs.image_name }}
