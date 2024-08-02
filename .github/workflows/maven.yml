@@ -23,5 +23,7 @@ jobs:
         uses: RAlvesCTW/academy/.github/actions/maven_build@main
       - name: Build Docker Image
         uses: RAlvesCTW/academy/.github/actions/docker_build@main
+        with:
+          dockerfile_path: src/main/docker/Dockerfile.jvm
       - name: List Docker Image
         run: docker images
