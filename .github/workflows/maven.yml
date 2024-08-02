@@ -25,7 +25,5 @@ jobs:
         uses: RAlvesCTW/academy/.github/actions/docker_build@main
         with:
           dockerfile_path: src/main/docker/Dockerfile.jvm
-          image_name: academy_image
-          tag_name: 123
       - name: List Docker Image
         run: docker images

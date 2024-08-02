@@ -29,5 +29,5 @@ runs:
 
     - name: Docker build
       shell: bash
-      run: docker build . --file ${{ inputs.dockerfile_path }} --tag ${{ inputs.image_name }}:${{ inputs.tag_name }}
+      run: docker build . --file ${{ inputs.dockerfile_path }} --tag $DOCKER_IMAGE_NAME:$TAG
 
