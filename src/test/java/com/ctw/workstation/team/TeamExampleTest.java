@@ -1,6 +1,6 @@
-/*
 package com.ctw.workstation.team;
 
+import com.ctw.workstation.common.enums.Location;
 import com.ctw.workstation.team.boundary.TeamResource;
 import com.ctw.workstation.team.control.TeamRepository;
 import com.ctw.workstation.team.entity.Team;
@@ -8,6 +8,7 @@ import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.common.http.TestHTTPEndpoint;
 import io.quarkus.test.junit.QuarkusTest;
 import io.quarkus.test.junit.TestProfile;
+import io.restassured.http.ContentType;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,6 +16,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
 
+import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
 import static org.hamcrest.core.IsEqual.equalTo;
 
@@ -24,6 +26,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
 //@TestHTTPEndpoint(TeamResource.class)
 //@TestProfile(CommonProfile.class)
 public class TeamExampleTest {
+    Team team1;
 
     @Inject
     TeamRepository teamRepository;
@@ -32,10 +35,10 @@ public class TeamExampleTest {
     @Transactional
     void setUp() {
         teamRepository.deleteAll();
-        Team team1 = new Team();
+        team1 = new Team();
         team1.setName("Team 1");
         team1.setProduct("Product 1");
-        team1.setDefaultLocation("Lisbon");
+        team1.setDefaultLocation(Location.LISBON);
         team1.setCreatedAt(LocalDateTime.now());
         team1.setModifiedAt(LocalDateTime.now());
         teamRepository.persist(team1);
@@ -67,7 +70,4 @@ public class TeamExampleTest {
         then().
                 statusCode(201);
     }
-
-
 }
-*/

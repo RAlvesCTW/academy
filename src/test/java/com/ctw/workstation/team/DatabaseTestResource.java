@@ -1,4 +1,3 @@
-/*
 package com.ctw.workstation.team;
 
 import io.quarkus.test.common.QuarkusTestResourceLifecycleManager;
@@ -24,7 +23,4 @@ public class DatabaseTestResource implements QuarkusTestResourceLifecycleManager
     public void stop() {
         postgreSQLContainer.stop();
     }
-
-
 }
-*/
