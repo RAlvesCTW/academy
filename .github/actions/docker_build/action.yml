@@ -5,8 +5,29 @@ inputs:
     description: "Path to the Dockerfile"
     required: false
     default: "Dockerfile"
+  image_name:
+    description: "Image Name"
+    required: false
+    default: "academy"
+  tag_name:
+    description: "Tag Name"
+    required: false
+    default: $(date +%s)
 runs:
   using: composite
   steps:
-    - run: docker build . --file ${{ inputs.dockerfile_path }} --tag academy:$(date +%s)
+    - name: Set env variable
       shell: bash
+      run: |
+        if [ -z "${{ inputs.tag_name }}" ]; then
+          echo "TAG=$(date +%s)" >> $GITHUB_ENV
+        else
+          echo "TAG=${{ inputs.tag_name }}" >> $GITHUB_ENV
+        fi
+
+        echo "DOCKER_IMAGE_NAME=$NAME" >> $GITHUB_ENV
+
+    - name: Docker build
+      shell: bash
+      run: docker build . --file ${{ inputs.dockerfile_path }} --tag ${{ inputs.image_name }}:${{ inputs.tag_name }}
+
