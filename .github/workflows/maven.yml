@@ -25,3 +25,4 @@ jobs:
         run: docker build . --file src/main/docker/Dockerfile.jvm --tag academy:$(date +%s)
       - name: List Docker Image
         run: docker images
+      - uses: RAlvesCTW/academy/.github/actions/maven_build@main
