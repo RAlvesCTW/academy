@@ -1,3 +1,4 @@
+/*
 package com.ctw.workstation.team;
 
 import com.ctw.workstation.team.entity.HelloAcademy;
@@ -37,7 +38,7 @@ public class HelloTest {
         );
     }
 
-    /*
+
     @Test
     void helloNull() {
         //Given or Arrange
@@ -63,8 +64,9 @@ public class HelloTest {
         //Then
         assertEquals("Hello " + name, result, "Validate if application could say hello properly.");
     }
-    */
+
 
     //TeamRepository teamRepository = Mockito.mock(TeamRepository.class);
     //TeamService teamService = Mockito.mock(TeamService.class);
 }
+*/

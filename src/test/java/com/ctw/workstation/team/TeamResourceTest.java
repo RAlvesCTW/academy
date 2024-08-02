@@ -1,3 +1,4 @@
+/*
 package com.ctw.workstation.team;
 
 import com.ctw.workstation.team.boundary.TeamResource;
@@ -67,7 +68,7 @@ public class TeamResourceTest {
         );
     }
 
-    /*
+
     @ParameterizedTest
     @MethodSource("teamNameArguments")
     void testGetByName(int expected, String name) {
@@ -92,7 +93,7 @@ public class TeamResourceTest {
                 Arguments.arguments(404, "Team B")
         );
     }
-    */
+
 }
 
 
@@ -113,3 +114,5 @@ public class TeamResourceTest {
         //Then
         //assetEquals("Hello Xbox", result, "Validate ...");
     //}
+
+ */

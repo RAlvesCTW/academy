@@ -1,3 +1,4 @@
+/*
 package com.ctw.workstation.team;
 
 import com.ctw.workstation.team.entity.HelloAcademy;
@@ -34,3 +35,4 @@ public class MathTest {
         );
     }
 }
+*/

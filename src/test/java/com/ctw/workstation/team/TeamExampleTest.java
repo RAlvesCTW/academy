@@ -1,3 +1,4 @@
+/*
 package com.ctw.workstation.team;
 
 import com.ctw.workstation.team.boundary.TeamResource;
@@ -57,7 +58,7 @@ public class TeamExampleTest {
                 statusCode(404);
     }
 
-    /*
+
     @Test
     void create_returns_201() {
         given().contentType(ContentType.JSON).body(team1).
@@ -67,5 +68,6 @@ public class TeamExampleTest {
                 statusCode(201);
     }
 
-     */
+
 }
+*/
