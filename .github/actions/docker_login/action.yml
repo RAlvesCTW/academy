@@ -10,7 +10,7 @@ inputs:
   image_name:
     description: "Image Name"
     required: false
-    default: $NAME
+    default: $NAME:$TAG
 runs:
   using: composite
   steps:
@@ -22,8 +22,8 @@ runs:
 
     - name: Docker Tag
       shell: bash
-      run: docker tag ${{ inputs.image_name }}:$TAG ${{ secrets.DOCKERHUB_USERNAME }}/${{ inputs.image_name }}
+      run: docker tag ${{ inputs.image_name }} ${{ inputs.username }}/${{ inputs.image_name }}
 
     - name: Docker Push
       shell: bash
-      run: docker push ${{ inputs.username }}${{ inputs.image_name }}:$TAG
+      run: docker push ${{ inputs.username }}${{ inputs.image_name }}
