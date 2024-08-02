@@ -27,3 +27,9 @@ jobs:
           dockerfile_path: src/main/docker/Dockerfile.jvm
       - name: List Docker Image
         run: docker images
+
+      - name: Docker Hub
+        uses: RAlvesCTW/academy/.github/actions/docker_login@main
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
